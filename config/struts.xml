@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	 
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+    <constant name="struts.multipart.saveDir" value="C:\\upload"/>  
+    <constant name="struts.multipart.maxSize" value="10701096"/> 
+    
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources"/>  
+    
+	<package name="default" namespace="/" extends="struts-default">
+ 
+		<action name="act-*" class="ActivityAction" method="{1}">
+			<result name="list">/foreground/show_activity.jsp</result>
+			<result name="listByAcProp">/WEB-INF/jsp/act-listByAcProp.jsp</result>
+			<result name="listByCmSchool">/WEB-INF/jsp/act-listByCmSchool.jsp</result>
+			<result name="listByAcMon">/WEB-INF/jsp/act-listByAcMon.jsp</result>
+			<result name="listByAcNum">/WEB-INF/view/act_getById.jsp</result>
+			<result name="queryMutlCase">/foreground/test.jsp</result>
+			<result name="delete" type="redirect">/act-list</result>
+			<result name="update" type="redirect">/act-list</result>
+		</action>
+		
+		<action name="admin-*" class="AdminAction" method="{1}">
+			<result name="listadmin">/background/views/admin-list.jsp</result>
+			<result name="save">/background/views/admin-addsuccess.jsp</result>
+			<result name="input">/background/views/admin-input.jsp</result>
+		</action>
+		<!-- 后台 公司 -->
+		<action name="cp-*" class="CompanyAction" method="{1}">
+			<result name="list">/background/views/cp-list.jsp</result>
+			<result name="getById">/WEB-INF/view/cp_getById.jsp</result>
+			
+			<result name="delete" type="redirect">/cp-list</result>
+			<result name="update" type="redirect">/cp-list</result>
+		</action>
+		<!-- 社团 -->
+		<action name="com-*" class="CommunityAction" method="{1}">
+			<result name="list">/background/views/com-list.jsp</result>
+			
+			<result name="delete" type="redirect">/com-list</result>
+			<result name="update" type="redirect">/com-list</result>
+		</action>
+		<!-- 前台用户登录 -->
+		<action name="stu-*" class="StudentAction" method="{1}">
+			<result name="login">/foreground/login.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="signout">../foreground/login.jsp</result>
+		</action>
+		
+		<action name="upload_*" class="UploadAction" method="{1}">
+           <result name="success">/WEB-INF/page/message.jsp</result>
+       </action>
+	</package>
+
+</struts>

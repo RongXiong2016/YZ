@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	 
+	<bean id="baseDao" class="com.hdu.dao.BaseDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--配置社团活动的dao -->
+	<bean id="activityDao" class="com.hdu.dao.impl.ActivityDaoImpl" parent="baseDao"/>
+		
+	<bean id="adminDao" class="com.hdu.dao.impl.AdminDaoImpl" parent="baseDao"/>
+		
+	<bean id="companyDao" class="com.hdu.dao.impl.CompanyDaoImpl " parent="baseDao"/>
+	
+	<bean id="communityDao" class="com.hdu.dao.impl.CommunityDaoImpl " parent="baseDao"/>
+	
+	<bean id="studentDao" class="com.hdu.dao.impl.StudentDaoImpl" parent="baseDao"></bean>
+		
+	<!--配置社团活动service -->
+	<bean id="activityService" class="com.hdu.service.impl.ActivityServiceImpl">
+		<property name="activityDao" ref="activityDao"></property>
+	</bean>
+	<bean id="adminService" class="com.hdu.service.impl.AdminServiceImpl">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+	<bean id="companyService" class="com.hdu.service.impl.CompanyServiceImpl">
+	<property name="companyDao" ref="companyDao"></property>
+	</bean>
+	
+	<bean id="communityService" class="com.hdu.service.impl.CommunityServiceImpl">
+	<property name="communityDao" ref="communityDao"></property>
+	</bean>
+	
+	<bean id="studentService" class="com.hdu.service.impl.StudentServiceImpl">
+	<property name="studentDao" ref="studentDao"></property>
+	</bean>
+	<!-- 配置action -->
+	<bean id="baseAction" class="com.hdu.action.BaseAction" />
+	<bean id="ActivityAction" class="com.hdu.action.ActivityAction"
+		scope="prototype" parent="baseAction">
+		<property name="activityService" ref="activityService"></property>
+	</bean>
+	
+	<bean id="AdminAction" class="com.hdu.action.AdminAction"
+		scope="prototype" parent="baseAction">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+	
+	<bean id="CompanyAction" class="com.hdu.action.CompanyAction"
+		scope="prototype" parent="baseAction">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+	
+	<bean id="CommunityAction" class="com.hdu.action.CommunityAction"
+		scope="prototype" parent="baseAction">
+		<property name="communityService" ref="communityService"></property>
+	</bean>
+	
+	<bean id="StudentAction" class="com.hdu.action.StudentAction"
+		scope="prototype" parent="baseAction">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+	
+	<bean id="UploadAction" class="com.hdu.action.UploadAction"
+		scope="prototype" parent="baseAction">
+		 
+	</bean>
+</beans>
