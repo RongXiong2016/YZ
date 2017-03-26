@@ -20,44 +20,39 @@ public class Activity implements java.io.Serializable {
 	private Integer acBudget;
 	private String acProp;
 	private String acAudit;
+	private String acProve;
 
 	// Constructors
 
 	/** default constructor */
-	public Activity() {
-	}
-
-	/** minimal constructor */
-	public Activity(String acName, String acInt, Integer acMon, Date acDay, Integer acBudget, String acProp,
-			String acAudit) {
-		this.acName = acName;
-		this.acInt = acInt;
-		this.acMon = acMon;
-		this.acDay = acDay;
-		this.acBudget = acBudget;
-		this.acProp = acProp;
-		this.acAudit = acAudit;
-	}
-
-	/** full constructor */
-	public Activity(Community community, Company company, String acName, String acInt, Integer acMon, Date acDay,
-			Integer acBudget, String acProp, String acAudit) {
-		this.community = community;
-		this.company = company;
-		this.acName = acName;
-		this.acInt = acInt;
-		this.acMon = acMon;
-		this.acDay = acDay;
-		this.acBudget = acBudget;
-		this.acProp = acProp;
-		this.acAudit = acAudit;
-	}
+	public Activity() {}
+ 
 
 	// Property accessors
 
 	public Integer getAcNum() {
 		return this.acNum;
 	}
+
+	public String getAcAudit() {
+		return acAudit;
+	}
+
+
+	public void setAcAudit(String acAudit) {
+		this.acAudit = acAudit;
+	}
+
+
+	public String getAcProve() {
+		return acProve;
+	}
+
+
+	public void setAcProve(String acProve) {
+		this.acProve = acProve;
+	}
+
 
 	public void setAcNum(Integer acNum) {
 		this.acNum = acNum;
@@ -125,14 +120,6 @@ public class Activity implements java.io.Serializable {
 
 	public void setAcProp(String acProp) {
 		this.acProp = acProp;
-	}
-
-	public String getAcAudit() {
-		return this.acAudit;
-	}
-
-	public void setAcAudit(String acAudit) {
-		this.acAudit = acAudit;
 	}
 
 }

@@ -24,16 +24,19 @@ public class CommunityServiceImpl implements CommunityService {
 		return communityDao.getAll();
 	}
 
-	public void delete(Integer id){
-		communityDao.delete(id);
-	}
+	@Override
+	public List<Community> getBycmSchool(String cmSchool) {
 
-	public void update(Integer id){
-		communityDao.update(id);
+		return communityDao.getBycmSchool(cmSchool);
 	}
 
 	@Override
-	public List<Community> getBycmSchool(String cmSchool) {
-		return communityDao.getBycmSchool(cmSchool);
+	public void cmdelete(Integer id) {
+		communityDao.cmdelete(id);
+	}
+
+	@Override
+	public void cmupdate(Integer id) {
+		communityDao.cmupdate(id);
 	}
 }

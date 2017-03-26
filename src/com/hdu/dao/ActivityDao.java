@@ -24,9 +24,7 @@ public interface ActivityDao {
 
 	//根据学校筛选
 	List<Activity> getByCmSchool(String cmSchool);
- 
-	Activity getByAcNum(Integer acNum);
-	public void update(Integer id);
-	public void delete(Integer id);
-	public List<Activity> queryByMutlCase(String acProp,String cmSchool,Integer acBudget);
+
+	public void acupdate(Integer id);
+	public void acdelete(Integer id);
 }

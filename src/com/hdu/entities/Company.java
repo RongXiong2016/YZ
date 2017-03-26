@@ -22,7 +22,6 @@ public class Company implements java.io.Serializable {
 	private String cpInt;
 	private Integer cpBudget;
 	private String cpAudit;
-	private String cpLic;
 	private Set activities = new HashSet(0);
 
 	// Constructors
@@ -33,7 +32,7 @@ public class Company implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Company(String cpName, String cpContact, String cpPhone, String cpEmail, String cpAddress, String cpIcon,
-			String cpPro, String cpInt, Integer cpBudget, String cpLic) {
+			String cpPro, String cpInt, Integer cpBudget) {
 		this.cpName = cpName;
 		this.cpContact = cpContact;
 		this.cpPhone = cpPhone;
@@ -43,12 +42,11 @@ public class Company implements java.io.Serializable {
 		this.cpPro = cpPro;
 		this.cpInt = cpInt;
 		this.cpBudget = cpBudget;
-		this.cpLic = cpLic;
 	}
 
 	/** full constructor */
 	public Company(String cpName, String cpContact, String cpPhone, String cpEmail, String cpAddress, String cpIcon,
-			String cpPro, String cpInt, Integer cpBudget, String cpAudit, String cpLic, Set activities) {
+			String cpPro, String cpInt, Integer cpBudget, String cpAudit, Set activities) {
 		this.cpName = cpName;
 		this.cpContact = cpContact;
 		this.cpPhone = cpPhone;
@@ -59,7 +57,6 @@ public class Company implements java.io.Serializable {
 		this.cpInt = cpInt;
 		this.cpBudget = cpBudget;
 		this.cpAudit = cpAudit;
-		this.cpLic = cpLic;
 		this.activities = activities;
 	}
 
@@ -144,21 +141,14 @@ public class Company implements java.io.Serializable {
 	public void setCpBudget(Integer cpBudget) {
 		this.cpBudget = cpBudget;
 	}
+	
 
 	public String getCpAudit() {
-		return this.cpAudit;
+		return cpAudit;
 	}
 
 	public void setCpAudit(String cpAudit) {
 		this.cpAudit = cpAudit;
-	}
-
-	public String getCpLic() {
-		return this.cpLic;
-	}
-
-	public void setCpLic(String cpLic) {
-		this.cpLic = cpLic;
 	}
 
 	public Set getActivities() {

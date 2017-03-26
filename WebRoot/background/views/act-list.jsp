@@ -54,8 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td>${acNum}</td>
 					<td>${acProve}</td>
 					<td>${acAudit }</td>
-					<td><a href="act-delete?id=${acNum }">删除</a></td>
-					<td><a href="act-update?id=${acNum }">通过</a></td>
+					<td><a href="act-acdelete?id=${acNum }">删除</a></td>
+					<td><a href="act-acupdate?id=${acNum }">通过</a></td>
 				</tr>
 			</s:iterator>
 		</table>

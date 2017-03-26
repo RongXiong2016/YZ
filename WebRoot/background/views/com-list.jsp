@@ -57,8 +57,8 @@
 					<td>${cmNum }</td>
 					<td><img src="${cmIcon }"></td>
 					<td>${cmAudit }</td>
-					<td><a href="com-delete?id=${cmNum }">Delete</a></td>
-					<td><a href="com-update?id=${cmNum }">通过</a></td>
+					<td><a href="com-cmdelete?id=${cmNum }">Delete</a></td>
+					<td><a href="com-cmupdate?id=${cmNum }">通过</a></td>
 				</tr>
 			</s:iterator>
 		</table>

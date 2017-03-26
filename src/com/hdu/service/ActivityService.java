@@ -26,11 +26,8 @@ public interface ActivityService {
 
 	//根据学校筛选
 	List<Activity> getByCmSchool(String cmSchool);
-
- 
-	Object getByAcNum(Integer acNum);
-	public void delete(Integer id);
 	
-	public void update(Integer id);
-	public List<Activity> queryByMutlCase(String acProp,String cmSchool,Integer acBudget);
+	public void acdelete(Integer id);
+	
+	public void acupdate(Integer id);
 }

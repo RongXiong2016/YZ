@@ -56,18 +56,13 @@
             </column>
         </property>
         <property name="cpAudit" type="java.lang.String">
-            <column name="cpAudit" length="20">
-                <comment>审核</comment>
-            </column>
-        </property>
-        <property name="cpLic" type="java.lang.String">
-            <column name="cpLic" length="20" not-null="true">
-                <comment>营业执照</comment>
+            <column name="cpAudit">
+                <comment>通过审核</comment>
             </column>
         </property>
         <set name="activities" inverse="true">
             <key>
-                <column name="cpNum">
+                <column name="cpNum" not-null="true">
                     <comment>赞助企业编号</comment>
                 </column>
             </key>

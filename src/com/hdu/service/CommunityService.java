@@ -20,9 +20,7 @@ public interface CommunityService {
 	public List<Community> getAll();
 	
 	
-	public void delete(Integer id);
+	public void cmdelete(Integer id);
 	
-	
-	
-	public void update(Integer id);
+	public void cmupdate(Integer id);
 }

@@ -66,8 +66,8 @@
 					<td>${cpNum }</td>
 					<td><img src="${cpIcon }"></td>
 					<td>${cpAudit }</td>
-					<td><a href="cp-delete?id=${cpNum }" class="del">删除</a></td>
-					<td><a href="cp-update?id=${cpNum }">通过</a></td>
+					<td><a href="cp-cpdelete?id=${cpNum }" class="del">删除</a></td>
+					<td><a href="cp-cpupdate?id=${cpNum }">通过</a></td>
 				</tr>
 			</s:iterator>
 	</s:else>

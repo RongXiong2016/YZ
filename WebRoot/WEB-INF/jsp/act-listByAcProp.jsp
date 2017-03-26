@@ -5,14 +5,26 @@
 <html>
 <head>
 
+<title></title>
+<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
 </head>
 
 <body>
-	<!-- <form action="act-getByAcProp" method="post">
-		<input type="text" name="acProp">
-		<input type="submit" value="提交">
-	</form> -->
-	 <a>根据活动性质筛选</a>
+	 
+	<hr>
+	<form action="act-getByAcProp" method="post">
+	<input type="text" name="acProp">
+	<input type="submit" value="查询">
+	</form>
+	
+	<s:if test="#request.activitiesByAcProp==null || #request.activitiesByAcProp.size()==0">
+     	没有活动信息
+     </s:if>
+
+	<s:else>
 		<table border="1" cellpadding="10" cellspacing="0">
 			<tr>
 				<td>acNum</td>
@@ -24,19 +36,19 @@
 				<td>acBudget</td>
 				<td>acProp</td>
 			</tr>
-			<s:iterator value="#request.activitiesByAcProp" var="act">
+			<s:iterator value="#request.activitiesByAcProp">
 				<tr>
-					<td>活动编号${act.acNum}</td>
-					<td></td>
-					<td></td>
-					<td>${act.acName}</td>
-					<td>${act.acInt}</td>
-					<td>${act.acMon}</td>
-					<td>${act.acBudget}</td>
-					<td>${act.acProp}</td>
+					<td>${acNum}</td>
+					<td>${community.cmSchool}</td>
+					<td>${company.cpNum}</td>
+					<td>${acName}</td>
+					<td>${acInt}</td>
+					<td>${acMon}</td>
+					<td>${acBudget}</td>
+					<td>${acProp}</td>
 				</tr>
 			</s:iterator>
 		</table>
- 
+	</s:else>
 </body>
 </html>

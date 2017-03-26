@@ -16,20 +16,6 @@ import com.hdu.entities.Community;
 public class CommunityDaoImpl extends BaseDao implements CommunityDao{
 
 	 
-	 
-	 
-	@Override
-	public void update(Integer id) {
-		String hql="update Community cm set cm.cmAudit='通过' where cm.cmNum=?";
-		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
-	}
-	 
-	@Override
-	public void delete(Integer id) {
-		String hql="delete from Community cm where cm.id=?";
-		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
-	}
-	 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Community> getAll() {
@@ -46,6 +32,20 @@ public class CommunityDaoImpl extends BaseDao implements CommunityDao{
 		return getSession().createQuery(hql).setString(0, cmSchool).list();
 	}
 
-	 
+
+
+	@Override
+	public void cmupdate(Integer id) {
+		String hql="update Community cm set cm.cmAudit='通过' where cm.cmNum=?";
+		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
+	}
+
+
+
+	@Override
+	public void cmdelete(Integer id) {
+		String hql="delete from Community cm where cm.cmNum=?";
+		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
+	}	 
 	 
 }

@@ -1,27 +1,18 @@
-/**
- * 
- */
 package com.hdu.dao.impl;
+
+import java.util.List;
 
 import com.hdu.dao.BaseDao;
 import com.hdu.dao.StudentDao;
 import com.hdu.entities.Student;
 
-/**
- * @author Administrator
- *
- */
-public class StudentDaoImpl extends BaseDao implements StudentDao{
+public class StudentDaoImpl extends BaseDao implements  StudentDao{
 
-	 
 	@Override
-	public Student login(Student student) {
-		String hql = "from Student stu where stu.stuId=:stuId and stu.stuName =:stuName";
-		return  (Student) getSession()
-				.createQuery(hql)
-				.setString("stuId", student.getStuId())
-				.setString("stuName",student.getStuName())
-				.uniqueResult();
-		 
+	@SuppressWarnings("unchecked")
+	public List<Student> getByID(Integer stuID) {
+		String hql="from Student stu where stu.stuID=?";
+		return getSession().createQuery(hql).setInteger(0, stuID).list();
 	}
+
 }

@@ -51,23 +51,13 @@
             </column>
         </property>
         <property name="cmAudit" type="java.lang.String">
-            <column name="cmAudit" length="20" not-null="true">
+            <column name="cmAudit">
                 <comment>社团审核</comment>
-            </column>
-        </property>
-        <property name="stuId" type="java.lang.Integer">
-            <column name="stuID" not-null="true">
-                <comment>联系人学号</comment>
-            </column>
-        </property>
-        <property name="auditIcon" type="java.lang.String">
-            <column name="auditIcon" length="20" not-null="true">
-                <comment>审核图片</comment>
             </column>
         </property>
         <set name="activities" inverse="true">
             <key>
-                <column name="cmNum">
+                <column name="cmNum" not-null="true">
                     <comment>社团编号</comment>
                 </column>
             </key>

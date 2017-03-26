@@ -1,11 +1,13 @@
-/**
- * 
- */
 package com.hdu.service;
 
+import java.util.List;
+
+import com.hdu.dao.StudentDao;
 import com.hdu.entities.Student;
 
- 
 public interface StudentService {
-	Student login(Student student);
+
+	void setStudentDao(StudentDao studentDao);
+	
+	List<Student> getByID(Integer stuID);
 }

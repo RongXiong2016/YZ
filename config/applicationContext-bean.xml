@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-	 
+
 	<bean id="baseDao" class="com.hdu.dao.BaseDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -15,11 +15,9 @@
 		
 	<bean id="adminDao" class="com.hdu.dao.impl.AdminDaoImpl" parent="baseDao"/>
 		
-	<bean id="companyDao" class="com.hdu.dao.impl.CompanyDaoImpl " parent="baseDao"/>
+	<bean id="companyDao" class="com.hdu.dao.impl.CompanyDaoImpl" parent="baseDao"/>
 	
-	<bean id="communityDao" class="com.hdu.dao.impl.CommunityDaoImpl " parent="baseDao"/>
-	
-	<bean id="studentDao" class="com.hdu.dao.impl.StudentDaoImpl" parent="baseDao"></bean>
+	<bean id="communityDao" class="com.hdu.dao.impl.CommunityDaoImpl" parent="baseDao"/>
 		
 	<!--配置社团活动service -->
 	<bean id="activityService" class="com.hdu.service.impl.ActivityServiceImpl">
@@ -34,10 +32,6 @@
 	
 	<bean id="communityService" class="com.hdu.service.impl.CommunityServiceImpl">
 	<property name="communityDao" ref="communityDao"></property>
-	</bean>
-	
-	<bean id="studentService" class="com.hdu.service.impl.StudentServiceImpl">
-	<property name="studentDao" ref="studentDao"></property>
 	</bean>
 	<!-- 配置action -->
 	<bean id="baseAction" class="com.hdu.action.BaseAction" />
@@ -61,13 +55,16 @@
 		<property name="communityService" ref="communityService"></property>
 	</bean>
 	
+	
+	<!-- 学生信息 -->
+	<bean id="studentDao" class="com.hdu.dao.impl.StudentDaoImpl" parent="baseDao"></bean>
+	
+	<bean id="studentService" class="com.hdu.service.impl.StudentServiceImpl">
+		<property name="studentDao" ref="studentDao"></property>
+	</bean>
+	
 	<bean id="StudentAction" class="com.hdu.action.StudentAction"
 		scope="prototype" parent="baseAction">
 		<property name="studentService" ref="studentService"></property>
-	</bean>
-	
-	<bean id="UploadAction" class="com.hdu.action.UploadAction"
-		scope="prototype" parent="baseAction">
-		 
 	</bean>
 </beans>

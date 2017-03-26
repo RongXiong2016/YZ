@@ -13,6 +13,12 @@ import com.hdu.service.CommunityService;
  *
  */
 public class CommunityAction extends BaseAction<Community>{
+	
+	private CommunityService communityService;
+
+	public void setCommunityService(CommunityService communityService) {
+		this.communityService = communityService;
+	}
 
 	//查询操作
 	public String list(){
@@ -28,16 +34,16 @@ public class CommunityAction extends BaseAction<Community>{
 		this.id = id;
 	}
 
-	public String delete(){
-		communityService.delete(id);
-		return "delete";
+	public String cmdelete(){
+		communityService.cmdelete(id);
+		return "cmdelete";
 	}
 
 
 	//修改
-	public String update(){
-		communityService.update(id);
-		return "update";
+	public String cmupdate(){
+		communityService.cmupdate(id);
+		return "cmupdate";
 	}
 
 

@@ -4,14 +4,11 @@ import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
-import org.apache.struts2.interceptor.SessionAware;
 
-import com.hdu.service.ActivityService;
-import com.hdu.service.CommunityService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class BaseAction<T> extends ActionSupport implements RequestAware,ModelDriven<T>,SessionAware{
+public class BaseAction<T> extends ActionSupport implements RequestAware,ModelDriven<T>{
 
 	protected T model;
 	
@@ -28,21 +25,9 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,ModelDr
 	}
  
 	protected Map<String, Object> request;
-	protected Map<String, Object> session;
+
 	@Override
 	public void setRequest(Map<String, Object> request) {
 		this.request = request;
-	}
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-	protected ActivityService activityService;
-	public void setActivityService(ActivityService activityService) {
-		this.activityService = activityService;
-	}
-	protected CommunityService communityService;
-
-	public void setCommunityService(CommunityService communityService) {
-		this.communityService = communityService;
 	}
 }

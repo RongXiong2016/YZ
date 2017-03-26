@@ -32,27 +32,16 @@ private CompanyDao companyDao;
 	public List<Company> getAll() {
 		return companyDao.getAll();
 	}
+
 	 
 	@Override
-	public void delete(Integer id) {
-		companyDao.delete(id);
+	public void cpdelete(Integer id) {
+		companyDao.cpdelete(id);
 	}
+
 	 
 	@Override
-	public void update(Integer id) {
-		companyDao.update(id);
-	}
-
-	@Override
-	public List<Company> queryFirstfour() {
-		 
-		return companyDao.queryFirstfour();
-	}
-
- 
-	@Override
-	public Company getById(Integer cpNum) {
-		return companyDao.getById(cpNum);
-		
+	public void cpupdate(Integer id) {
+		companyDao.cpupdate(id);
 	}
 }

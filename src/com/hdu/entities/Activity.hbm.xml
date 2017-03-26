@@ -10,13 +10,13 @@
             <column name="acNum" />
             <generator class="native" />
         </id>
-        <many-to-one name="community" class="com.hdu.entities.Community" fetch="select">
-            <column name="cmNum">
+        <many-to-one name="community" class="com.hdu.entities.Community" fetch="join" lazy="false">
+            <column name="cmNum" not-null="true">
                 <comment>社团编号</comment>
             </column>
         </many-to-one>
-        <many-to-one name="company" class="com.hdu.entities.Company" fetch="select">
-            <column name="cpNum">
+        <many-to-one name="company" class="com.hdu.entities.Company" fetch="join" lazy="false">
+            <column name="cpNum" not-null="true">
                 <comment>赞助企业编号</comment>
             </column>
         </many-to-one>
@@ -50,10 +50,7 @@
                 <comment>活动性质</comment>
             </column>
         </property>
-        <property name="acAudit" type="java.lang.String">
-            <column name="acAudit" length="20" not-null="true">
-                <comment>活动审核</comment>
-            </column>
-        </property>
+        <property name="acAudit" type="java.lang.String"></property>
+        <property name="acProve" type="java.lang.String"></property>
     </class>
 </hibernate-mapping>

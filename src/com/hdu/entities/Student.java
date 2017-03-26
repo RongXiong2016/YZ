@@ -1,43 +1,21 @@
 package com.hdu.entities;
 
-/**
- * Student entity. @author MyEclipse Persistence Tools
- */
+public class Student implements java.io.Serializable{
 
-public class Student implements java.io.Serializable {
-
-	// Fields
-
-	private String stuId;
+	private int stuID;
 	private String stuName;
-
-	// Constructors
-
-	/** default constructor */
-	public Student() {
+	
+	public int getStuID() {
+		return stuID;
 	}
-
-	/** full constructor */
-	public Student(String stuName) {
-		this.stuName = stuName;
+	public void setStuID(int stuID) {
+		this.stuID = stuID;
 	}
-
-	// Property accessors
-
-	public String getStuId() {
-		return this.stuId;
-	}
-
-	public void setStuId(String stuId) {
-		this.stuId = stuId;
-	}
-
 	public String getStuName() {
-		return this.stuName;
+		return stuName;
 	}
-
 	public void setStuName(String stuName) {
 		this.stuName = stuName;
 	}
-
+	
 }

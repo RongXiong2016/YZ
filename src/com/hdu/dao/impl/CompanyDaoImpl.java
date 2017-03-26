@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.hdu.dao.BaseDao;
 import com.hdu.dao.CompanyDao;
-import com.hdu.entities.Activity;
 import com.hdu.entities.Company;
 
 /**
@@ -32,32 +31,14 @@ public class CompanyDaoImpl extends BaseDao implements CompanyDao{
 	}
 	
 	//根据公司id删除
-	public void delete(Integer id){
+	public void cpdelete(Integer id){
 		String hql="delete from Company cp where cp.id=?";
 		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
 	}
 	
 	//更新公司
-		public void update(Integer id){
-			String hql="update Company cp set cp.cpAudit='通过审核'  where cp.id=?";
-			getSession().createQuery(hql).setInteger(0, id).executeUpdate();
-		}
-	 //查询前4条
-	@Override
-	public List<Company> queryFirstfour() {
-		 String hql = "from Company cp order by cp.cpNum asc";
-		return getSession()
-			.createQuery(hql)
-			.setFirstResult(0)
-			.setMaxResults(4)
-			.list();
+	public void cpupdate(Integer id){
+		String hql="update Company cp set cp.cpAudit='通过审核'  where cp.id=?";
+		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
 	}
- 
-	@Override
-	public Company getById(Integer cpNum) {
-		String hql = "from Company cp where cp.cpNum=:cpNum";
-		return (Company) getSession().createQuery(hql).setInteger("cpNum", cpNum).list().get(0);
-		 
-	}
-	 
 }

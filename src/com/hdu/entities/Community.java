@@ -21,8 +21,6 @@ public class Community implements java.io.Serializable {
 	private String cmIcon;
 	private String cmInt;
 	private String cmAudit;
-	private Integer stuId;
-	private String auditIcon;
 	private Set activities = new HashSet(0);
 
 	// Constructors
@@ -33,7 +31,7 @@ public class Community implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Community(String cmName, String cmSchool, String cmContact, String cmPhone, String cmEmail, String cmPro,
-			String cmIcon, String cmInt, String cmAudit, Integer stuId, String auditIcon) {
+			String cmIcon, String cmInt) {
 		this.cmName = cmName;
 		this.cmSchool = cmSchool;
 		this.cmContact = cmContact;
@@ -42,14 +40,11 @@ public class Community implements java.io.Serializable {
 		this.cmPro = cmPro;
 		this.cmIcon = cmIcon;
 		this.cmInt = cmInt;
-		this.cmAudit = cmAudit;
-		this.stuId = stuId;
-		this.auditIcon = auditIcon;
 	}
 
 	/** full constructor */
 	public Community(String cmName, String cmSchool, String cmContact, String cmPhone, String cmEmail, String cmPro,
-			String cmIcon, String cmInt, String cmAudit, Integer stuId, String auditIcon, Set activities) {
+			String cmIcon, String cmInt, String cmAudit, Set activities) {
 		this.cmName = cmName;
 		this.cmSchool = cmSchool;
 		this.cmContact = cmContact;
@@ -59,8 +54,6 @@ public class Community implements java.io.Serializable {
 		this.cmIcon = cmIcon;
 		this.cmInt = cmInt;
 		this.cmAudit = cmAudit;
-		this.stuId = stuId;
-		this.auditIcon = auditIcon;
 		this.activities = activities;
 	}
 
@@ -139,27 +132,11 @@ public class Community implements java.io.Serializable {
 	}
 
 	public String getCmAudit() {
-		return this.cmAudit;
+		return cmAudit;
 	}
 
 	public void setCmAudit(String cmAudit) {
 		this.cmAudit = cmAudit;
-	}
-
-	public Integer getStuId() {
-		return this.stuId;
-	}
-
-	public void setStuId(Integer stuId) {
-		this.stuId = stuId;
-	}
-
-	public String getAuditIcon() {
-		return this.auditIcon;
-	}
-
-	public void setAuditIcon(String auditIcon) {
-		this.auditIcon = auditIcon;
 	}
 
 	public Set getActivities() {

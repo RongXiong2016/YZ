@@ -42,25 +42,14 @@ public class ActivityServiceImpl implements ActivityService{
 		 
 		return activityDao.getByAcMon(cpBudget);
 	}
- 
+
 	@Override
-	public Activity getByAcNum(Integer acNum) {
-	 
-		return activityDao.getByAcNum(acNum);
+	public void acdelete(Integer acNum) {
+		activityDao.acdelete(acNum);
 	}
- 
+
 	@Override
-	public void delete(Integer acNum) {
-		activityDao.delete(acNum);
-	}
-	 
-	@Override
-	public void update(Integer acNum) {
-		activityDao.update(acNum);
-	}
- 
-	@Override
-	public List<Activity> queryByMutlCase(String acProp, String cmSchool, Integer acBudget) {
-		return activityDao.queryByMutlCase(acProp, cmSchool, acBudget);
+	public void acupdate(Integer acNum) {
+		activityDao.acupdate(acNum);
 	}
 }

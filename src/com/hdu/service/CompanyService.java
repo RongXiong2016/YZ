@@ -18,15 +18,9 @@ public interface CompanyService {
 	public List<Company> getAll();
 	
 	
-	public void delete(Integer id);
+	public void cpdelete(Integer id);
 	
-	public void update(Integer id);
+	public void cpupdate(Integer id);
 	
 	void setCompanyDao(CompanyDao companyDao);
- 
-	public List<Company> queryFirstfour();
-	/**
-	 * @param cpNum
-	 */
-	public Company getById(Integer cpNum);
 }

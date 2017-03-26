@@ -41,21 +41,17 @@ public class CompanyAction extends BaseAction<Company>{
 		this.id = id;
 	}
 
-	public String delete(){
-		companyService.delete(id);
-		return "delete";
+	public String cpdelete(){
+		companyService.cpdelete(id);
+		return "cpdelete";
 	}
 
 
 	//修改
-	public String update(){
-		companyService.update(id);
-		return "update";
+	public String cpupdate(){
+		companyService.cpupdate(id);
+		return "cpupdate";
 	}
-	
-	public String getById(){
-		request.put("cmpanyById", companyService.getById(model.getCpNum()));
-		return "getById";
-	}
+
 
 }
