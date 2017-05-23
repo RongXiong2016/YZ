@@ -19,11 +19,11 @@
 <body>
 	<div class="head">
 		<div class="header"></div>
-		<img class="picture" style="margin-left:10px;" src="img/图标.png" /> <a
-			class="home" style="margin-left:20px;" href="mainwindow(c).html">首页</a>
-		<a class="home" style="margin-left:21px;" href="actionChoose(c).html">活动展示</a>
+		<img class="picture" style="margin-left:10px;" src="../img/tubiao.png" /> <a
+			class="home" style="margin-left:20px;" href="../index.jsp">首页</a>
+		<a class="home" style="margin-left:21px;" href="show_activity.jsp">活动展示</a>
 		<a class="home" style="margin-left:22px;" href="zanzhuChoose(c).html">赞助展示</a>
-		<a class="home" style="margin-left:23px;" href="discuss(c).html">讨论区</a>
+		<a class="home" style="margin-left:23px;" href="discuss.jsp">讨论区</a>
 		<a class="home" style="margin-left:24px;" href="">关于我们</a> <select
 			onchange="MM_jumpMenu('parent',this,0)">
 			<option value="">username</option>
@@ -61,14 +61,14 @@
 				<td><a href="" style="text-decoration:none">浙江大学</a></td>
 				<td><a href="" style="text-decoration:none">杭州师范大学</a></td>
 				<td><a href="" style="text-decoration:none">浙江传媒学院</a></td>
-				<td><a href="" style="text-decoration:none">浙江师范dax</a></td>
+				<td><a href="" style="text-decoration:none">浙江师范大学</a></td>
 			</tr>
 		</table>
 	</div>
 	<div class="body2">
 		<p>
 		<h2>
-			<a style="text-decoration:none" href="actionInformation(c).html">关于创新大赛的活动</a>
+			<a style="text-decoration:none" href="show_activity_detail.jsp">关于创新大赛的活动</a>
 		</h2>
 		</p>
 
@@ -112,7 +112,7 @@
 			</dd>
 		</dl>
 	</div>
-	<img class="body5" src="img/45758PIC8Du.jpg!qtwebp226" />
+	<img class="body5" src="../img/45758PIC8Du.jpg!qtwebp226" />
 	</div>
 	<div class="body4">
 		<a style="text-decoration:none">1</a> <a

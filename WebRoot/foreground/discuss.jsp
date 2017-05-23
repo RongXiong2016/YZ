@@ -15,11 +15,11 @@
 		<div class="head">
 			<div class="header">
 			</div>
-			<img class="picture" style="margin-left:10px;" src="img/图标.png" />
-			<a class="home" style="margin-left:20px;" href="mainWindow(w).html">首页</a>
-			<a class="home" style="margin-left:21px;" href="actionChoose(w).html">活动展示</a>
+			<img class="picture" style="margin-left:10px;" src="../img/tubiao.png" />
+			<a class="home" style="margin-left:20px;" href="../index.jsp">首页</a>
+			<a class="home" style="margin-left:21px;" href="show_activity.jsp">活动展示</a>
 			<a class="home" style="margin-left:22px;" href="zanzhuChoose(w).html">赞助展示</a>
-			<a class="home" style="margin-left:23px;" href='discuss(w).html'">讨论区</a>
+			<a class="home" style="margin-left:23px;" href="discuss.jsp">讨论区</a>
 			<a class="home" style="margin-left:24px;" href="">关于我们</a>
 			<a class="home" style="margin-left:650px;" href="login.html">登陆/注册</a>
 		</div>		
@@ -34,7 +34,7 @@
 		<strong>与别人分享你的观点！</strong>
 		</div>
 		<div class="div4">		
-        <strong>不成熟的观点可以在这里完善！</strong>		
+        <strong>不成熟的观点可以在这里完善！</st5rong>		
         </div>
 	</div>
 	<div class="body2">
@@ -88,7 +88,7 @@
 		<a style="margin-left:40px; text-decoration:none" href="">3</a>
 		<a style="margin-left:60px; text-decoration:none" href="">下一页</a>
 	</div>
-	<img class="body3" src="img/讨论.jpg" />
+	<img class="body3" src="../img/taolun.jpg" />
 <div style="margin-top:1500px">
 	<tr style="text-align: center">
 <hr />

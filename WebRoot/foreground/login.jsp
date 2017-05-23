@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>友赞校园</title>
@@ -10,7 +9,7 @@
 <body>
 	<div class="head">
 		<div class="header"></div>
-		<a class="home" style="margin-left:20px;" href="/YZ/index.jsp">首页</a>
+		<a class="home" style="margin-left:20px;" href="YZ/index.jsp">首页</a>
 		<a class="home" style="margin-left:30px;" href="">关于我们</a>
 	</div>
 	<div class="login">
